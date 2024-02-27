@@ -1,0 +1,7 @@
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-bg-type: #4b49acdb;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd):hover {
+    --bs-table-bg-type: #4b49ac;
+}
