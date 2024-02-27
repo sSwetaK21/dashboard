@@ -1,0 +1,236 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="px-sm-2 px-0 sidebar" [ngClass]="status ? 'col-1' : 'col-2'">
+      <!-- col-auto col-md-3 col-xl-2 -->
+      <div
+        class="dis-flex align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <a
+          href="#"
+          class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+        >
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a class="nav-link align-middle px-0" routerLink="/dashbard">
+              <i class="bi bi-ui-checks-grid"></i>
+              <span class="ms-1" [class.d-none]="status">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#submenu1"
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle"
+            >
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1" [class.d-none]="status">Home</span>
+            </a>
+            <ul
+              class="collapse show nav flex-column ms-1"
+              id="submenu1"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100">
+                <a routerLink="/pipes/employee" class="nav-link px-0">
+                  <span [class.d-none]="status" class="m-1">Employee</span>
+                  <i class="bi bi-person-vcard-fill"></i>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/forms" class="nav-link px-0">
+                  <span [class.d-none]="status" class="m-1">Forms</span>
+                  <i class="bi bi-ui-checks"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="nav-link px-0 align-middle" routerLink="/bootstraps">
+              <i class="fs-4 bi-bootstrap"></i>
+              <span class="ms-1" [class.d-none]="status">Bootstrap</span></a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle"
+            >
+              <i class="fs-4 bi-table"></i>
+              <span class="ms-1" [class.d-none]="status">Orders</span></a
+            >
+            <ul
+              class="collapse nav flex-column ms-1"
+              id="submenu2"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100">
+                <a href="" class="nav-link px-0">
+                  <span [class.d-none]="status">Item</span> 1</a
+                >
+              </li>
+              <li>
+                <a href="" class="nav-link px-0">
+                  <span [class.d-none]="status">Item</span> 2</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              routerLink="/todo"
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle"
+            >
+              <i class="fs-4 bi-grid"></i>
+              <span class="ms-1" [class.d-none]="status">Products</span>
+            </a>
+            <ul
+              class="collapse nav flex-column ms-1"
+              id="submenu3"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100">
+                <a class="nav-link px-0">
+                  <span [class.d-none]="status">Product</span> 1</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0">
+                  <span [class.d-none]="status">Product</span> 2</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0">
+                  <span [class.d-none]="status">Product</span> 3</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0">
+                  <span [class.d-none]="status">Product</span> 4</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-people"></i>
+              <span class="ms-1" [class.d-none]="status">Customers</span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col">
+      <div class="main">
+        <!-- fixed-top -->
+        <nav
+          class="navbar navbar-expand px-2 border-bottom"
+          style="background: #ffffff; height: 50px"
+        >
+          <div class="rows">
+            <div class="cols">
+              <button
+                class="btn"
+                id="sidebar-toggle"
+                type="button"
+                (click)="toggle()"
+              >
+                <i class="bi bi-list fs-2"></i>
+              </button>
+            </div>
+            <div class="cols">
+              <div class="dropdown">
+                <a
+                  href="#"
+                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                  id="dropdownUser1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="hugenerd"
+                    width="30"
+                    height="30"
+                    class="rounded-circle"
+                  />
+                  <span class="d-none d-sm-inline mx-1">Username</span>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                  <li><a class="dropdown-item" href="#">New project...</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" routerLink="/login">Sign out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- sidebar with responsive -->
+<!-- <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid" style="justify-content: flex-start;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <a class="navbar-brand" href="#">Flower Valley</a>
+    
+      <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Flower Valley</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav> -->

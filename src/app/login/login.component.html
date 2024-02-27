@@ -1,0 +1,50 @@
+<!-- login here through methods and ngtemplate -->
+<div>
+  <div *ngIf="logIn" else #loggedOut>
+    <ng-container *ngTemplateOutlet="loggedin"></ng-container>
+  </div>
+
+  <div *ngIf="!logIn" else #loggedin>
+    <ng-container *ngTemplateOutlet="loggedOut"></ng-container>
+  </div>
+
+  <ng-template #loggedin>
+    <h1>Welcome, You are Signed In</h1>
+    <button type="submit" class="btn m-2" (click)="logOut()">Login Now</button>
+  </ng-template>
+
+  <ng-template #loggedOut>
+    <div>
+      <p>Please Sigin</p>
+
+      <div class="wrapper">
+        <form action="">
+          <h1 class="title">Signup</h1>
+          <div class="inputBox">
+            <input type="email" placeholder="Username" required />
+          </div>
+          <div class="inputBox">
+            <input type="password" placeholder="Password" required />
+          </div>
+
+          <div class="inputBox">
+            <input type="password" placeholder="Confirm Password" required />
+          </div>
+
+          <div class="rememberBox">
+            <label> <input type="checkbox" />Remember me </label>
+          </div>
+
+          <button
+            type="submit"
+            class="btn"
+            (click)="login()"
+            routerLink="/dashboard"
+          >
+            Signup
+          </button>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+</div>
